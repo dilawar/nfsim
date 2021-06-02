@@ -202,7 +202,7 @@ namespace NFcore
 	 */
 	class System
 	{
-	
+
 		// _NETGEN_
 	    // Netgen is a system wrapper for network generation and
 		// needs access to protected elements of System.
@@ -935,7 +935,7 @@ namespace NFcore
 			Molecule * getBondedMolecule(int bSiteIndex) const;
 			int getBondedMoleculeBindingSiteIndex(int cIndex) const;
 
-			int getRxnListMappingId(int rxnIndex) { 
+			int getRxnListMappingId(int rxnIndex) {
 				//return rxnListMappingId[rxnIndex];
 				return (rxnListMappingId2[rxnIndex].size() > 0) ? *rxnListMappingId2[rxnIndex].begin() : -1;  //JJT: changing to handle multiple mappings per reaction
 			};
@@ -1209,11 +1209,12 @@ namespace NFcore
 
 
 			void setTotalRateFlag(bool totalRate) { totalRateFlag = totalRate; };
+
 			/* Whether to use reaction connecitivity for updating molecule
 			 * membership
 			 * Arvind Rasi Subramaniam
 			 */
-			void setConnectivityFlag(bool flag) { useConnectivity = flag; };
+			void setConnectivityFlag(bool flag) { setConnectivityFlag = flag; };
 
 
 			// _NETGEN_
@@ -1246,7 +1247,7 @@ namespace NFcore
 			int rxnId;
 
 			/* if this reaction is tagged, it outputs a message everytime it is fired */
-			
+
 			string name;
 			int reactionType;
 			unsigned int n_reactants;
