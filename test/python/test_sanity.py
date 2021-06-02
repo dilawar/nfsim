@@ -9,5 +9,10 @@ def test_sanity():
     assert(nfsim.__file__)
     print(nfsim.System)
 
+def test_functions():
+    nfsim.printLogo(10, nfsim.__version__)
+    nfsim.printHelp(nfsim.__version__)
+
 if __name__ == "__main__":
     test_sanity()
+    test_functions()
