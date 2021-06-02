@@ -2,7 +2,7 @@
 #define NFFUNCTION_HH_
 
 
-#include "muParser/muParser.h"
+#include <muParser.h>
 #include "../NFcore/NFcore.hh"
 
 
