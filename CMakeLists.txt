@@ -10,7 +10,6 @@ project(NFsim LANGUAGES CXX C)
 set(NFSIM_VERSION 1.13)
 
 set(CMAKE_CXX_STANDARD 14)
-add_definitions(-DNFSIM_VERSION=${NFSIM_VERSION})
 
 if(NOT CMAKE_BUILD_TYPE)
     set(CMAKE_BUILD_TYPE Release)
@@ -81,6 +80,7 @@ target_link_libraries(NFsim PUBLIC muparser::muparser)
 add_executable(NFsim-exe ${CMAKE_SOURCE_DIR}/src/NFsim.cpp)
 target_link_libraries(NFsim-exe PRIVATE NFsim)
 set_target_properties(NFsim-exe PROPERTIES OUTPUT_NAME NFsim)
+target_compile_options(NFsim-exe PUBLIC -DNFSIM_VERSION="${NFSIM_VERSION}")
 
 #
 # Python extension

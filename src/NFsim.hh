@@ -64,8 +64,7 @@ bool runFromArgs(System *s, map<string,string> argMap, bool verbose);
 System *initSystemFromFlags(map<string,string> argMap, bool verbose);
 
 
-
-
+bool runRNFscript(map<string,string> argMap, bool verbose);
 
 
 

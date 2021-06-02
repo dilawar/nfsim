@@ -7,3 +7,7 @@ def test_sanity():
     print(dir(nfsim))
     assert(nfsim.__version__)
     assert(nfsim.__file__)
+    print(nfsim.System)
+
+if __name__ == "__main__":
+    test_sanity()

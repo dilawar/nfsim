@@ -8,7 +8,9 @@ find_package(Python COMPONENTS Interpreter Development)
 find_package(pybind11 REQUIRED)
 
 pybind11_add_module(nfsim MODULE module.cpp ${CMAKE_CURRENT_SOURCE_DIR}/../NFsim.cpp)
-target_compile_options(nfsim PUBLIC -DBUILD_PYTHON_MODULE)
+target_compile_options(nfsim PUBLIC
+    -DBUILD_PYTHON_MODULE
+    -DNFSIM_VERSION="${NFSIM_VERSION}")
 
 target_link_libraries(nfsim PRIVATE NFsim pybind11::pybind11)
 
