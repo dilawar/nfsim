@@ -10,7 +10,7 @@ find_package(pybind11 REQUIRED)
 pybind11_add_module(nfsim MODULE module.cpp ${CMAKE_CURRENT_SOURCE_DIR}/../NFsim.cpp)
 target_compile_options(nfsim PUBLIC -DBUILD_PYTHON_MODULE)
 
-target_link_libraries(nfsim PRIVATE pybind11::pybind11)
+target_link_libraries(nfsim PRIVATE NFsim pybind11::pybind11)
 
 enable_testing()
 add_test(NAME pytest COMMAND ${Python3_EXECUTABLE} -m pytest

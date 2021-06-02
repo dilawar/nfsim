@@ -18,7 +18,9 @@ using namespace std;
 #include <pybind11/stl_bind.h>
 
 using namespace pybind11::literals; // for _a
+namespace py = pybind11;
 
+#include "../NFcore/NFcore.hh"
 #include "../NFsim.hh"
 
 /**
@@ -27,14 +29,18 @@ using namespace pybind11::literals; // for _a
  * @param _smoldyn (name of the module)
  * @param m
  */
-PYBIND11_MODULE(nfsim, m)
-{
-    // py::options options;
-    // options.disable_function_signatures();
+PYBIND11_MODULE(nfsim, m) {
+  // py::options options;
+  // options.disable_function_signatures();
 
-    m.doc() = R"pbdoc(
+  m.doc() = R"pbdoc(
         Python interface of NFsim
     )pbdoc";
 
-    m.attr("__version__") = NFSIM_VERSION; // Version is set by CMAKE
+  py::class_<System>(m, "System")
+      .def(py::init<string>())
+      .def(py::init<string, bool>())
+      .def(py::init<string, bool, int>());
+
+  m.attr("__version__") = NFSIM_VERSION; // Version is set by CMAKE
 }

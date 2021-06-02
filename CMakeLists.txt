@@ -75,6 +75,7 @@ add_library(NFsim STATIC
     $<TARGET_OBJECTS:NFcore>
     $<TARGET_OBJECTS:NFtest>)
 
+
 target_link_libraries(NFsim PUBLIC muparser::muparser)
 
 add_executable(NFsim-exe ${CMAKE_SOURCE_DIR}/src/NFsim.cpp)
