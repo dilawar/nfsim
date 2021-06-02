@@ -19,6 +19,8 @@ using namespace std;
 
 using namespace pybind11::literals; // for _a
 
+#include "../NFsim.hh"
+
 /**
  * @brief Definition of Python module _smoldyn.
  *
@@ -31,9 +33,7 @@ PYBIND11_MODULE(nfsim, m)
     // options.disable_function_signatures();
 
     m.doc() = R"pbdoc(
-        Low level Python interface for the smoldyn simulator. This module is not
-        meant for direct user interaction. The user api defined in smoldyn/smoldyn.py
-        uses this module to create an user friendly API.
+        Python interface of NFsim
     )pbdoc";
 
     m.attr("__version__") = NFSIM_VERSION; // Version is set by CMAKE

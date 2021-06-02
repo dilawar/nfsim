@@ -11,3 +11,9 @@ pybind11_add_module(nfsim MODULE module.cpp ${CMAKE_CURRENT_SOURCE_DIR}/../NFsim
 target_compile_options(nfsim PUBLIC -DBUILD_PYTHON_MODULE)
 
 target_link_libraries(nfsim PRIVATE pybind11::pybind11)
+
+enable_testing()
+add_test(NAME pytest COMMAND ${Python3_EXECUTABLE} -m pytest
+    ${CMAKE_SOURCE_DIR}/test/python)
+
+set_tests_properties(pytest PROPERTIES ENVIRONMENT PYTHONPATH=${CMAKE_CURRENT_BINARY_DIR})
