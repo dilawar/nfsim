@@ -79,7 +79,7 @@ target_link_libraries(NFsim PUBLIC muparser::muparser)
 
 add_executable(NFsim-exe ${CMAKE_SOURCE_DIR}/src/NFsim.cpp)
 target_link_libraries(NFsim-exe PRIVATE NFsim)
-set_target_properties(NFsim-exe PROPERTIES OUTPUT NFsim)
+set_target_properties(NFsim-exe PROPERTIES OUTPUT_NAME NFsim)
 
 #
 # Python extension
