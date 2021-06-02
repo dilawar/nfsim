@@ -178,6 +178,8 @@ System *initSystemFromFlags(map<string,string> argMap, bool verbose);
 
 
 
+#ifndef PYTHON_MODULE
+
 //!  Main executable for the NFsim program.
 /*!
   @author Michael Sneddon
@@ -316,6 +318,7 @@ int main(int argc, char *argv[])
     return 0;
 }
 
+#endif // PYTHON_MODULE
 
 
 bool runRNFscript(map<string,string> argMap, bool verbose)
