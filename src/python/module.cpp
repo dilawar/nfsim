@@ -33,7 +33,7 @@ extern void runAgentCell(map<string,string> argMap, bool verbose);
  * @param _smoldyn (name of the module)
  * @param m
  */
-PYBIND11_MODULE(nfsim, m) {
+PYBIND11_MODULE(_nfsim, m) {
   // py::options options;
   // options.disable_function_signatures();
 

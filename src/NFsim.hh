@@ -25,48 +25,45 @@
 //
 ////////////////////////////////////////////////////////////////////////////////
 
-
-
 #ifndef NFSIM_HH_
 #define NFSIM_HH_
 
-//Include "mpi.h" in Scheduler.h first
+// Include "mpi.h" in Scheduler.h first
 #include "NFscheduler/Scheduler.h"
 
-//Include the core files needed to run the simulation
+// Include the core files needed to run the simulation
 #include "NFcore/NFcore.hh"
-#include "NFutil/NFutil.hh"
 #include "NFinput/NFinput.hh"
 #include "NFreactions/NFreactions.hh"
+#include "NFutil/NFutil.hh"
 
-//Include the specific tests
+// Include the specific tests
 #include "NFfunction/NFfunction.hh"
 //#include "NFtest/compare/compare.hh"
 //#include  "NFtest/transformations/transformations.hh"
-#include  "NFtest/simple_system/simple_system.hh"
-#include  "NFtest/transcription/transcription.hh"
-#include  "NFtest/tlbr/tlbr.hh"
-#include  "NFtest/agentcell/agentcell.hh"
-
-
+#include "NFtest/agentcell/agentcell.hh"
+#include "NFtest/simple_system/simple_system.hh"
+#include "NFtest/tlbr/tlbr.hh"
+#include "NFtest/transcription/transcription.hh"
 
 //! Runs a given System with the specified arguments
 /*!
   @author Michael Sneddon
 */
-bool runFromArgs(System *s, map<string,string> argMap, bool verbose);
-
+bool
+runFromArgs(System* s, map<string, string> argMap, bool verbose);
 
 //! Initialize a system from command line flags
 /*!
   @author Michael Sneddon
 */
-System *initSystemFromFlags(map<string,string> argMap, bool verbose);
+System*
+initSystemFromFlags(map<string, string> argMap, bool verbose);
 
+bool
+runRNFscript(map<string, string> argMap, bool verbose);
 
-bool runRNFscript(map<string,string> argMap, bool verbose);
-
-
-
+int
+exec(const map<string, string>& argMap, bool& verbose, bool& parsed);
 
 #endif /*NFSIM_HH_*/
