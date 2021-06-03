@@ -34,7 +34,7 @@ list(APPEND CMAKE_PREFIX_PATH ${CMAKE_BINARY_DIR})
 # Install using conan
 #
 conan_cmake_configure(REQUIRES
-        pybind11/2.6.1
+        pybind11/2.6.2
         muparser/2.3.2
     GENERATORS cmake_find_package
     OPTIONS ${CONAN_OPTIONS})
