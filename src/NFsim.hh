@@ -63,7 +63,4 @@ initSystemFromFlags(map<string, string> argMap, bool verbose);
 bool
 runRNFscript(map<string, string> argMap, bool verbose);
 
-int
-exec(const map<string, string>& argMap, bool& verbose, bool& parsed);
-
 #endif /*NFSIM_HH_*/

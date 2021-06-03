@@ -1078,7 +1078,7 @@ void System::printAllObservableCounts(double cSampleTime)
 }
 
 void System::printAllObservableCounts(double cSampleTime,int eventCounter)
-{	
+{
 	cout<<"Time";
 	for(obsIter = obsToOutput.begin(); obsIter != obsToOutput.end(); obsIter++)
 		cout<<"\t"<<(*obsIter)->getName();

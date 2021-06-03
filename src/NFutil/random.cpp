@@ -1,9 +1,3 @@
-
-
-
-
-
-
 #include "NFutil.hh"
 
 //Include the Mersenne Twister pseudo-random number generator implementation
@@ -20,9 +14,6 @@
 #include <time.h>
 #include <cstdlib>
 #include <math.h>
-
-
-
 
 
 using namespace NFutil;
@@ -88,16 +79,16 @@ double NFutil::RANDOM_GAUSSIAN()
     if(haveNextGaussian)
     {
     	haveNextGaussian = false;
-    	return nextGaussian;	
+    	return nextGaussian;
     }
-    
+
 	double v1=0, v2=0, s=0;
 	do {
 		v1 = 2 * dRandOpen()-1;
 		v2 = 2 * dRandOpen()-1;
 		s=v1*v1 + v2*v2;
 	} while (s>=1 || s==0);
-	
+
 	double multiplier = sqrt(-2*log(s)/s);
 	nextGaussian = v2*multiplier;
 	haveNextGaussian = true;

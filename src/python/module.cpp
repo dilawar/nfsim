@@ -24,8 +24,10 @@ namespace py = pybind11;
 #include "../NFsim.hh"
 
 extern void printHelp(string);
-extern void printLogo(int indent, string version);
-extern void runAgentCell(map<string,string> argMap, bool verbose);
+extern void
+printLogo(int indent, string version);
+extern void
+runAgentCell(map<string, string> argMap, bool verbose);
 
 /**
  * @brief Definition of Python module _smoldyn.
@@ -33,27 +35,28 @@ extern void runAgentCell(map<string,string> argMap, bool verbose);
  * @param _smoldyn (name of the module)
  * @param m
  */
-PYBIND11_MODULE(_nfsim, m) {
-  // py::options options;
-  // options.disable_function_signatures();
+PYBIND11_MODULE(_nfsim, m)
+{
+    // py::options options;
+    // options.disable_function_signatures();
 
-  m.doc() = R"pbdoc(
+    m.doc() = R"pbdoc(
         Python interface of NFsim
     )pbdoc";
 
-  py::class_<System>(m, "System")
+    py::class_<System>(m, "System")
       .def(py::init<string>())
       .def(py::init<string, bool>())
       .def(py::init<string, bool, int>());
 
-  // Functions.
-  m.def("initSystemFromFlags", &initSystemFromFlags);
-  m.def("runFromArgs", &runFromArgs);
-  m.def("runRNFscript", &runRNFscript);
-  m.def("runAgentCell", &runAgentCell);
+    // Functions.
+    m.def("initSystemFromFlags", &initSystemFromFlags);
+    m.def("runFromArgs", &runFromArgs);
+    m.def("runRNFscript", &runRNFscript);
+    m.def("runAgentCell", &runAgentCell);
 
-  m.def("printHelp", &printHelp);
-  m.def("printLogo", &printLogo);
+    m.def("printHelp", &printHelp);
+    m.def("printLogo", &printLogo);
 
-  m.attr("__version__") = NFSIM_VERSION; // Version is set by CMAKE
+    m.attr("__version__") = NFSIM_VERSION; // Version is set by CMAKE
 }

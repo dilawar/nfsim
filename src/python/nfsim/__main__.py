@@ -14,8 +14,9 @@ def main(args: dict):
     for k, v in args.items():
         if v:
             opts[k] = str(v)
-    s = _nfsim.initSystemFromFlags(opts, args.get("verbose", False))
-    _nfsim.runFromArgs(s)
+    verbose: bool = args.get("verbose", False)
+    s = _nfsim.initSystemFromFlags(opts, verbose)
+    _nfsim.runFromArgs(s, opts, verbose)
 
 
 if __name__ == "__main__":

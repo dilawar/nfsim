@@ -87,4 +87,9 @@ target_compile_options(NFsim-exe PUBLIC -DNFSIM_VERSION="${NFSIM_VERSION}")
 #
 add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/src/python)
 
+#
+# Tests
+#
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/test)
+
 enable_testing()
